@@ -1,9 +1,14 @@
 # Grain - Zero Prompt AI Desktop Agent
 
 **A macOS 13.0+ desktop AI agent with detective noir aesthetic and heavy glass morphism design.**
-NEED CLERK INTEGRATION/ FIX UI
+**NEED CLERK INTEGRATION/ FIX UI**
+**Lottie DOES NOT show up, goes back to fallback(purple G) needs fixing**
 
-<img width="800" alt="Grain Preview" src="https://via.placeholder.com/800x400/1C1C1C/E8E8E8?text=Grain+AI+Agent">
+<img width="396" height="597" alt="Screenshot 2026-02-02 at 12 04 10 PM" src="https://github.com/user-attachments/assets/4c96554e-9f3f-414f-b2dc-e14a8f0f14b6" />
+<img width="840" height="252" alt="Screenshot 2026-02-02 at 12 04 07 PM" src="https://github.com/user-attachments/assets/8b0ade86-fae6-4816-b8d8-8efc3c3a0645" />
+<img width="109" height="116" alt="Screenshot 2026-02-02 at 12 04 21 PM" src="https://github.com/user-attachments/assets/f2344965-32e4-42b4-ab36-7f4d9ecb9a3a" />
+
+
 
 ## Features
 
