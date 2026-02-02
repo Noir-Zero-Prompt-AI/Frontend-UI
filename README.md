@@ -1,6 +1,7 @@
 # Grain - Zero Prompt AI Desktop Agent
 
 **A macOS 13.0+ desktop AI agent with detective noir aesthetic and heavy glass morphism design.**
+NEED CLERK INTEGRATION/ FIX UI
 
 <img width="800" alt="Grain Preview" src="https://via.placeholder.com/800x400/1C1C1C/E8E8E8?text=Grain+AI+Agent">
 
