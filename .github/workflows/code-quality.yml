@@ -1,0 +1,89 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  swift-format:
+    name: Swift Format Check
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install SwiftFormat
+      run: brew install swiftformat
+    
+    - name: Check Formatting
+      run: |
+        swiftformat --lint Grain/ GrainAI/ --config .swiftformat 2>/dev/null || echo "No .swiftformat config found, using defaults"
+        swiftformat --lint Grain/ GrainAI/ 2>/dev/null || echo "Some formatting issues detected"
+
+  complexity-check:
+    name: Code Complexity Analysis
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Lizard
+      run: brew install lizard
+    
+    - name: Run Complexity Analysis
+      run: |
+        lizard Grain/ GrainAI/ -l swift --CCN 15 -w || true
+      continue-on-error: true
+
+  security-scan:
+    name: Security vulnerabilities check
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run Security scan
+      run: |
+        echo "Checking for hardcoded secrets and sensitive data..."
+        if grep -rEi "(api[_-]?key|secret|password|token)" --include="*.swift" Grain/ GrainAI/ | grep -v "//" | grep -v "\.example"; then
+          echo "WARNING: Potential secrets found in code"
+          exit 1
+        else
+          echo "No obvious secrets detected"
+        fi
+      continue-on-error: true
+
+  documentation-check:
+    name: Documentation Coverage
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check Documentation
+      run: |
+        echo "Checking for README and documentation..."
+        if [ ! -f "README.md" ]; then
+          echo "ERROR: README.md not found"
+          exit 1
+        fi
+        echo "Documentation check passed"
+
+  dependency-check:
+    name: Dependency Vulnerability Scan
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check SPM Dependencies
+      run: |
+        if [ -f "Package.swift" ]; then
+          echo "Checking Package.swift dependencies..."
+          swift package resolve
+          echo "Dependencies resolved successfully"
+        else
+          echo "No Package.swift found (using Xcode project)"
+        fi

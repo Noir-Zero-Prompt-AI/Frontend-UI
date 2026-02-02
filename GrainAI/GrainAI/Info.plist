@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSAccessibilityUsageDescription</key>
+	<string>Grain needs accessibility access to interact with applications on your behalf.</string>
+	<key>NSScreenCaptureUsageDescription</key>
+	<string>Grain observes your screen to understand context and automate tasks.</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Grain needs to control other applications to automate repetitive tasks.</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>CFBundleIdentifier</key>
+	<string>com.grain.GrainAI</string>
+	<key>CFBundleName</key>
+	<string>GrainAI</string>
+	<key>CFBundleDisplayName</key>
+	<string>Grain</string>
+</dict>
+</plist>
