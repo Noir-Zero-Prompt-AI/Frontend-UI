@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA000001000000000000001 /* holmesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000001 /* holmesApp.swift */; };
+		AA000001000000000000002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000002 /* AppDelegate.swift */; };
+		AA000001000000000000003 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000003 /* Permissions.swift */; };
+		AA000001000000000000004 /* NoirColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000004 /* NoirColors.swift */; };
+		AA000001000000000000005 /* NoirFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000005 /* NoirFonts.swift */; };
+		AA000001000000000000006 /* AnimationCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000006 /* AnimationCurves.swift */; };
+		AA000001000000000000007 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000007 /* GlassCard.swift */; };
+		AA000001000000000000008 /* GrainOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000008 /* GrainOverlay.swift */; };
+		AA000001000000000000009 /* NoirButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000009 /* NoirButton.swift */; };
+		AA000001000000000000010 /* NoirTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000010 /* NoirTextField.swift */; };
+		AA000001000000000000011 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000011 /* OnboardingFlow.swift */; };
+		AA000001000000000000012 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000012 /* OnboardingViewModel.swift */; };
+		AA000001000000000000013 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000013 /* WelcomeScreen.swift */; };
+		AA000001000000000000014 /* HowItWorksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000014 /* HowItWorksScreen.swift */; };
+		AA000001000000000000015 /* PermissionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000015 /* PermissionsScreen.swift */; };
+		AA000001000000000000016 /* ReadyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000016 /* ReadyScreen.swift */; };
+		AA000001000000000000017 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000017 /* SearchBarView.swift */; };
+		AA000001000000000000018 /* SearchBarWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000018 /* SearchBarWindow.swift */; };
+		AA000001000000000000019 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000019 /* SearchViewModel.swift */; };
+		AA000001000000000000020 /* VoiceInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000020 /* VoiceInputView.swift */; };
+		AA000001000000000000021 /* SideIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000021 /* SideIconView.swift */; };
+		AA000001000000000000022 /* SideIconWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000022 /* SideIconWindow.swift */; };
+		AA000001000000000000023 /* MainPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000023 /* MainPanelView.swift */; };
+		AA000001000000000000024 /* MainPanelWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000024 /* MainPanelWindow.swift */; };
+		AA000001000000000000025 /* ContextCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000025 /* ContextCard.swift */; };
+		AA000001000000000000026 /* ActionSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000026 /* ActionSuggestions.swift */; };
+		AA000001000000000000027 /* ActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000027 /* ActivityLog.swift */; };
+		AA000001000000000000028 /* NotchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000028 /* NotchView.swift */; };
+		AA000001000000000000029 /* NotchWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000029 /* NotchWindow.swift */; };
+		AA000001000000000000030 /* NotchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000030 /* NotchDetector.swift */; };
+		AA000001000000000000031 /* NotchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000031 /* NotchViewModel.swift */; };
+		AA000001000000000000032 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000032 /* HotkeyManager.swift */; };
+		AA000001000000000000033 /* MenuBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000033 /* MenuBarManager.swift */; };
+		AA000001000000000000034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000034 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA000002000000000000001 /* holmesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holmesApp.swift; sourceTree = "<group>"; };
+		AA000002000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA000002000000000000003 /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
+		AA000002000000000000004 /* NoirColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoirColors.swift; sourceTree = "<group>"; };
+		AA000002000000000000005 /* NoirFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoirFonts.swift; sourceTree = "<group>"; };
+		AA000002000000000000006 /* AnimationCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCurves.swift; sourceTree = "<group>"; };
+		AA000002000000000000007 /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		AA000002000000000000008 /* GrainOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrainOverlay.swift; sourceTree = "<group>"; };
+		AA000002000000000000009 /* NoirButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoirButton.swift; sourceTree = "<group>"; };
+		AA000002000000000000010 /* NoirTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoirTextField.swift; sourceTree = "<group>"; };
+		AA000002000000000000011 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		AA000002000000000000012 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		AA000002000000000000013 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		AA000002000000000000014 /* HowItWorksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorksScreen.swift; sourceTree = "<group>"; };
+		AA000002000000000000015 /* PermissionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsScreen.swift; sourceTree = "<group>"; };
+		AA000002000000000000016 /* ReadyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyScreen.swift; sourceTree = "<group>"; };
+		AA000002000000000000017 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		AA000002000000000000018 /* SearchBarWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarWindow.swift; sourceTree = "<group>"; };
+		AA000002000000000000019 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		AA000002000000000000020 /* VoiceInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputView.swift; sourceTree = "<group>"; };
+		AA000002000000000000021 /* SideIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideIconView.swift; sourceTree = "<group>"; };
+		AA000002000000000000022 /* SideIconWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideIconWindow.swift; sourceTree = "<group>"; };
+		AA000002000000000000023 /* MainPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPanelView.swift; sourceTree = "<group>"; };
+		AA000002000000000000024 /* MainPanelWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPanelWindow.swift; sourceTree = "<group>"; };
+		AA000002000000000000025 /* ContextCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextCard.swift; sourceTree = "<group>"; };
+		AA000002000000000000026 /* ActionSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSuggestions.swift; sourceTree = "<group>"; };
+		AA000002000000000000027 /* ActivityLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLog.swift; sourceTree = "<group>"; };
+		AA000002000000000000028 /* NotchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchView.swift; sourceTree = "<group>"; };
+		AA000002000000000000029 /* NotchWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchWindow.swift; sourceTree = "<group>"; };
+		AA000002000000000000030 /* NotchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchDetector.swift; sourceTree = "<group>"; };
+		AA000002000000000000031 /* NotchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchViewModel.swift; sourceTree = "<group>"; };
+		AA000002000000000000032 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		AA000002000000000000033 /* MenuBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarManager.swift; sourceTree = "<group>"; };
+		AA000002000000000000034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA000002000000000000035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA000002000000000000036 /* holmes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = holmes.entitlements; sourceTree = "<group>"; };
+		AA000003000000000000000 /* holmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = holmes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA000004000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA000005000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				AA000005000000000000001 /* holmes */,
+				AA000005000000000000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA000005000000000000001 /* holmes */ = {
+			isa = PBXGroup;
+			children = (
+				AA000005000000000000003 /* App */,
+				AA000005000000000000004 /* Design */,
+				AA000005000000000000005 /* Components */,
+				AA000005000000000000006 /* Views */,
+				AA000005000000000000007 /* Core */,
+				AA000005000000000000008 /* Resources */,
+			);
+			path = holmes;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA000003000000000000000 /* holmes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000001 /* holmesApp.swift */,
+				AA000002000000000000002 /* AppDelegate.swift */,
+				AA000002000000000000003 /* Permissions.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000004 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000004 /* NoirColors.swift */,
+				AA000002000000000000005 /* NoirFonts.swift */,
+				AA000002000000000000006 /* AnimationCurves.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000005 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000007 /* GlassCard.swift */,
+				AA000002000000000000008 /* GrainOverlay.swift */,
+				AA000002000000000000009 /* NoirButton.swift */,
+				AA000002000000000000010 /* NoirTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA000005000000000000009 /* Onboarding */,
+				AA000005000000000000010 /* SearchBar */,
+				AA000005000000000000011 /* SideIcon */,
+				AA000005000000000000012 /* MainPanel */,
+				AA000005000000000000013 /* NotchAnimation */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000007 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000032 /* HotkeyManager.swift */,
+				AA000002000000000000033 /* MenuBarManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000008 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000034 /* Assets.xcassets */,
+				AA000002000000000000035 /* Info.plist */,
+				AA000002000000000000036 /* holmes.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000009 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000011 /* OnboardingFlow.swift */,
+				AA000002000000000000012 /* OnboardingViewModel.swift */,
+				AA000002000000000000013 /* WelcomeScreen.swift */,
+				AA000002000000000000014 /* HowItWorksScreen.swift */,
+				AA000002000000000000015 /* PermissionsScreen.swift */,
+				AA000002000000000000016 /* ReadyScreen.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000010 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000017 /* SearchBarView.swift */,
+				AA000002000000000000018 /* SearchBarWindow.swift */,
+				AA000002000000000000019 /* SearchViewModel.swift */,
+				AA000002000000000000020 /* VoiceInputView.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000011 /* SideIcon */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000021 /* SideIconView.swift */,
+				AA000002000000000000022 /* SideIconWindow.swift */,
+			);
+			path = SideIcon;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000012 /* MainPanel */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000023 /* MainPanelView.swift */,
+				AA000002000000000000024 /* MainPanelWindow.swift */,
+				AA000002000000000000025 /* ContextCard.swift */,
+				AA000002000000000000026 /* ActionSuggestions.swift */,
+				AA000002000000000000027 /* ActivityLog.swift */,
+			);
+			path = MainPanel;
+			sourceTree = "<group>";
+		};
+		AA000005000000000000013 /* NotchAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				AA000002000000000000028 /* NotchView.swift */,
+				AA000002000000000000029 /* NotchWindow.swift */,
+				AA000002000000000000030 /* NotchDetector.swift */,
+				AA000002000000000000031 /* NotchViewModel.swift */,
+			);
+			path = NotchAnimation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA000006000000000000000 /* holmes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA000007000000000000002 /* Build configuration list for PBXNativeTarget "holmes" */;
+			buildPhases = (
+				AA000006000000000000001 /* Sources */,
+				AA000004000000000000000 /* Frameworks */,
+				AA000006000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = holmes;
+			productName = holmes;
+			productReference = AA000003000000000000000 /* holmes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA000008000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					AA000006000000000000000 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = AA000007000000000000001 /* Build configuration list for PBXProject "holmes" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA000005000000000000000;
+			productRefGroup = AA000005000000000000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA000006000000000000000 /* holmes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA000006000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000001000000000000034 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA000006000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000001000000000000001 /* holmesApp.swift in Sources */,
+				AA000001000000000000002 /* AppDelegate.swift in Sources */,
+				AA000001000000000000003 /* Permissions.swift in Sources */,
+				AA000001000000000000004 /* NoirColors.swift in Sources */,
+				AA000001000000000000005 /* NoirFonts.swift in Sources */,
+				AA000001000000000000006 /* AnimationCurves.swift in Sources */,
+				AA000001000000000000007 /* GlassCard.swift in Sources */,
+				AA000001000000000000008 /* GrainOverlay.swift in Sources */,
+				AA000001000000000000009 /* NoirButton.swift in Sources */,
+				AA000001000000000000010 /* NoirTextField.swift in Sources */,
+				AA000001000000000000011 /* OnboardingFlow.swift in Sources */,
+				AA000001000000000000012 /* OnboardingViewModel.swift in Sources */,
+				AA000001000000000000013 /* WelcomeScreen.swift in Sources */,
+				AA000001000000000000014 /* HowItWorksScreen.swift in Sources */,
+				AA000001000000000000015 /* PermissionsScreen.swift in Sources */,
+				AA000001000000000000016 /* ReadyScreen.swift in Sources */,
+				AA000001000000000000017 /* SearchBarView.swift in Sources */,
+				AA000001000000000000018 /* SearchBarWindow.swift in Sources */,
+				AA000001000000000000019 /* SearchViewModel.swift in Sources */,
+				AA000001000000000000020 /* VoiceInputView.swift in Sources */,
+				AA000001000000000000021 /* SideIconView.swift in Sources */,
+				AA000001000000000000022 /* SideIconWindow.swift in Sources */,
+				AA000001000000000000023 /* MainPanelView.swift in Sources */,
+				AA000001000000000000024 /* MainPanelWindow.swift in Sources */,
+				AA000001000000000000025 /* ContextCard.swift in Sources */,
+				AA000001000000000000026 /* ActionSuggestions.swift in Sources */,
+				AA000001000000000000027 /* ActivityLog.swift in Sources */,
+				AA000001000000000000028 /* NotchView.swift in Sources */,
+				AA000001000000000000029 /* NotchWindow.swift in Sources */,
+				AA000001000000000000030 /* NotchDetector.swift in Sources */,
+				AA000001000000000000031 /* NotchViewModel.swift in Sources */,
+				AA000001000000000000032 /* HotkeyManager.swift in Sources */,
+				AA000001000000000000033 /* MenuBarManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA000009000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA000009000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		AA000009000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = holmes/Resources/holmes.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = holmes/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeroprompt.holmes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AA000009000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = holmes/Resources/holmes.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = holmes/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeroprompt.holmes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA000007000000000000001 /* Build configuration list for PBXProject "holmes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA000009000000000000001 /* Debug */,
+				AA000009000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA000007000000000000002 /* Build configuration list for PBXNativeTarget "holmes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA000009000000000000003 /* Debug */,
+				AA000009000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA000008000000000000000 /* Project object */;
+}

@@ -1,6 +1,6 @@
 # Zero Prompt AI - Desktop Agent Specification
 
-**Project Name**: Grain  
+**Project Name**: holmes (make sure its all lowercase)  
 **Platform**: macOS 13.0+ (Ventura+)  
 **Framework**: Swift + SwiftUI  
 **Status**: Frontend Development Phase  
@@ -12,7 +12,7 @@
 
 An autonomous desktop AI agent that learns from user actions and proactively completes tasks without explicit prompting. The agent observes screen activity, understands context, and executes workflows independently—approaching desktop AGI.
 
-**Design Philosophy**: Grainy detective noir aesthetic meets Apple's glass morphism. Professional, shadowy, low-key with black/white/gray palette.
+**Design Philosophy**: Grainy detective noir aesthetic meets Apple's glass morphism. Professional, shadowy, low-key with black/white/gray palette. Make sure to add a glass type UI as well
 
 ---
 
@@ -1078,6 +1078,7 @@ open Grain.xcodeproj
 - Swift Forums (for technical questions)
 
 ---
+Make sure the app is also in the Mac Menu Bar with a simple icon.
 
 **Last Updated**: January 31, 2026  
 **Document Owner**: Development Team  
