@@ -41,6 +41,9 @@
 		AA000001000000000000032 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000032 /* HotkeyManager.swift */; };
 		AA000001000000000000033 /* MenuBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000033 /* MenuBarManager.swift */; };
 		AA000001000000000000034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000034 /* Assets.xcassets */; };
+		AA000001000000000000037 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000039 /* LottieView.swift */; };
+		AA000001000000000000038 /* noireye.json in Resources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000040 /* noireye.json */; };
+		AA000001000000000000039 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = AA00000A000000000000001 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,8 @@
 		AA000002000000000000034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA000002000000000000035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA000002000000000000036 /* holmes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = holmes.entitlements; sourceTree = "<group>"; };
+		AA000002000000000000039 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		AA000002000000000000040 /* noireye.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noireye.json; sourceTree = "<group>"; };
 		AA000003000000000000000 /* holmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = holmes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA000001000000000000039 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +156,7 @@
 				AA000002000000000000008 /* GrainOverlay.swift */,
 				AA000002000000000000009 /* NoirButton.swift */,
 				AA000002000000000000010 /* NoirTextField.swift */,
+				AA000002000000000000039 /* LottieView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 				AA000002000000000000034 /* Assets.xcassets */,
 				AA000002000000000000035 /* Info.plist */,
 				AA000002000000000000036 /* holmes.entitlements */,
+				AA000002000000000000040 /* noireye.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -257,6 +265,9 @@
 			dependencies = (
 			);
 			name = holmes;
+			packageProductDependencies = (
+				AA00000A000000000000001 /* Lottie */,
+			);
 			productName = holmes;
 			productReference = AA000003000000000000000 /* holmes.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +296,9 @@
 				Base,
 			);
 			mainGroup = AA000005000000000000000;
+			packageReferences = (
+				AA00000B000000000000001 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = AA000005000000000000002 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA000001000000000000034 /* Assets.xcassets in Resources */,
+				AA000001000000000000038 /* noireye.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +358,7 @@
 				AA000001000000000000031 /* NotchViewModel.swift in Sources */,
 				AA000001000000000000032 /* HotkeyManager.swift in Sources */,
 				AA000001000000000000033 /* MenuBarManager.swift in Sources */,
+				AA000001000000000000037 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +565,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA00000B000000000000001 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA00000A000000000000001 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA00000B000000000000001 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA000008000000000000000 /* Project object */;
 }

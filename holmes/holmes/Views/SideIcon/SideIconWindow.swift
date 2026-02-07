@@ -8,11 +8,14 @@ class SideIconWindowController: NSObject, ObservableObject {
     @Published var iconState: IconState = .dormant
     @Published var isExpanded: Bool = false
     @Published var isVisible: Bool = false
+    @Published var isBlinking: Bool = false
     
-    private var currentPosition: NSPoint?
-    private let iconSize: CGFloat = 60
+    private var currentYPosition: CGFloat?
+    private let characterWidth: CGFloat = 120
+    private let characterHeight: CGFloat = 120
+    private let peekAmount: CGFloat = 60
     
-    private let positionKey = "SideIconPosition"
+    private let positionKey = "SideCharacterYPosition"
     
     override private init() {
         super.init()
@@ -44,9 +47,31 @@ class SideIconWindowController: NSObject, ObservableObject {
         }
     }
     
+    func setExpanded(_ expanded: Bool) {
+        isExpanded = expanded
+        repositionForExpandState()
+    }
+    
+    private func repositionForExpandState() {
+        guard let window = window, let screen = NSScreen.main else { return }
+        
+        let screenFrame = screen.visibleFrame
+        let visibleWidth = isExpanded ? characterWidth : peekAmount
+        let newX = screenFrame.maxX - visibleWidth
+        
+        var frame = window.frame
+        frame.origin.x = newX
+        
+        NSAnimationContext.runAnimationGroup { context in
+            context.duration = 0.3
+            context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+            window.animator().setFrame(frame, display: true)
+        }
+    }
+    
     private func createWindow() {
         let window = SideIconPanel(
-            contentRect: NSRect(x: 0, y: 0, width: iconSize, height: iconSize),
+            contentRect: NSRect(x: 0, y: 0, width: characterWidth, height: characterHeight),
             styleMask: [.borderless, .nonactivatingPanel],
             backing: .buffered,
             defer: false
@@ -56,10 +81,10 @@ class SideIconWindowController: NSObject, ObservableObject {
         window.backgroundColor = .clear
         window.level = .floating
         window.collectionBehavior = [.canJoinAllSpaces, .stationary]
-        window.isMovableByWindowBackground = true
+        window.isMovableByWindowBackground = false
         window.hasShadow = false
         
-        let hostingView = NSHostingView(rootView: SideIconHostView(controller: self))
+        let hostingView = NSHostingView(rootView: SideCharacterHostView(controller: self))
         hostingView.frame = window.contentView?.bounds ?? .zero
         hostingView.autoresizingMask = [.width, .height]
         
@@ -67,41 +92,80 @@ class SideIconWindowController: NSObject, ObservableObject {
         window.delegate = self
         
         self.window = window
+        
+        setupDragGesture()
+    }
+    
+    private func setupDragGesture() {
+        var isDragging = false
+        var dragStartY: CGFloat = 0
+        var windowStartY: CGFloat = 0
+        
+        NSEvent.addLocalMonitorForEvents(matching: .leftMouseDown) { [weak self] event in
+            guard let self = self, let window = self.window else { return event }
+            
+            let locationInWindow = event.locationInWindow
+            let locationOnScreen = window.convertPoint(toScreen: locationInWindow)
+            
+            if window.frame.contains(locationOnScreen) {
+                isDragging = true
+                dragStartY = locationOnScreen.y
+                windowStartY = window.frame.origin.y
+            }
+            return event
+        }
+        
+        NSEvent.addLocalMonitorForEvents(matching: .leftMouseDragged) { [weak self] event in
+            guard let self = self, isDragging, let window = self.window, let screen = NSScreen.main else { return event }
+            
+            let currentY = NSEvent.mouseLocation.y
+            let deltaY = currentY - dragStartY
+            var newY = windowStartY + deltaY
+            
+            let screenFrame = screen.visibleFrame
+            newY = max(screenFrame.minY, min(newY, screenFrame.maxY - self.characterHeight))
+            
+            var frame = window.frame
+            frame.origin.y = newY
+            window.setFrame(frame, display: true)
+            
+            return event
+        }
+        
+        NSEvent.addLocalMonitorForEvents(matching: .leftMouseUp) { [weak self] event in
+            if isDragging {
+                isDragging = false
+                self?.savePosition()
+            }
+            return event
+        }
     }
     
     private func positionWindow() {
         guard let window = window, let screen = NSScreen.main else { return }
         
-        let position: NSPoint
-        if let saved = currentPosition {
-            position = saved
+        let screenFrame = screen.visibleFrame
+        
+        let yPosition: CGFloat
+        if let saved = currentYPosition {
+            yPosition = saved
         } else {
-            let screenFrame = screen.visibleFrame
-            position = NSPoint(
-                x: screenFrame.maxX - iconSize - 20,
-                y: screenFrame.midY - iconSize / 2
-            )
+            yPosition = screenFrame.midY - characterHeight / 2
         }
         
-        window.setFrameOrigin(position)
+        let xPosition = screenFrame.maxX - peekAmount
+        
+        window.setFrameOrigin(NSPoint(x: xPosition, y: yPosition))
     }
     
     private func loadSavedPosition() {
-        if let data = UserDefaults.standard.data(forKey: positionKey),
-           let point = try? JSONDecoder().decode(CodablePoint.self, from: data) {
-            currentPosition = NSPoint(x: point.x, y: point.y)
-        }
+        currentYPosition = UserDefaults.standard.object(forKey: positionKey) as? CGFloat
     }
     
     func savePosition() {
         guard let window = window else { return }
-        let origin = window.frame.origin
-        currentPosition = origin
-        
-        let point = CodablePoint(x: origin.x, y: origin.y)
-        if let data = try? JSONEncoder().encode(point) {
-            UserDefaults.standard.set(data, forKey: positionKey)
-        }
+        currentYPosition = window.frame.origin.y
+        UserDefaults.standard.set(currentYPosition, forKey: positionKey)
     }
 }
 
@@ -111,25 +175,23 @@ extension SideIconWindowController: NSWindowDelegate {
     }
 }
 
-struct CodablePoint: Codable {
-    let x: CGFloat
-    let y: CGFloat
-}
-
 class SideIconPanel: NSPanel {
     override var canBecomeKey: Bool { false }
     override var canBecomeMain: Bool { false }
 }
 
-struct SideIconHostView: View {
+struct SideCharacterHostView: View {
     @ObservedObject var controller: SideIconWindowController
     
     var body: some View {
-        SideIconView(
-            state: $controller.iconState,
-            isExpanded: $controller.isExpanded
+        SideCharacterView(
+            isExpanded: $controller.isExpanded,
+            isBlinking: $controller.isBlinking
         ) {
-            MainPanelWindowController.shared.toggle()
+            controller.setExpanded(controller.isExpanded)
+            if controller.isExpanded {
+                MainPanelWindowController.shared.show()
+            }
         }
     }
 }

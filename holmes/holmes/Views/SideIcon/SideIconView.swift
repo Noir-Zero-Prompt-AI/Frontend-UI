@@ -1,4 +1,5 @@
 import SwiftUI
+import Lottie
 
 enum IconState: Equatable {
     case dormant
@@ -28,7 +29,6 @@ struct SideIconView: View {
         Button(action: onTap) {
             ZStack {
                 backgroundGlow
-                
                 iconContent
                     .scaleEffect(pulseScale)
             }
@@ -120,6 +120,40 @@ struct SideIconView: View {
     }
 }
 
+// MARK: - Side Character View using Lottie
+
+struct SideCharacterView: View {
+    @Binding var isExpanded: Bool
+    @Binding var isBlinking: Bool
+    let onTap: () -> Void
+    
+    var body: some View {
+        Button(action: {
+            isBlinking = true
+            withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
+                isExpanded.toggle()
+            }
+            onTap()
+        }) {
+            LottieCharacterView(isBlinking: $isBlinking)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+struct LottieCharacterView: View {
+    @Binding var isBlinking: Bool
+    
+    var body: some View {
+        LottieView(name: "noireye", loopMode: .playOnce, play: $isBlinking)
+            .frame(width: 350, height: 350)
+            .scaleEffect(0.20)
+            .rotationEffect(.degrees(-90))
+            .shadow(color: .black.opacity(0.5), radius: 10, x: -2, y: 2)
+            .offset(x: -125)
+    }
+}
+
 #Preview {
     ZStack {
         Color.gray.opacity(0.3).ignoresSafeArea()
@@ -133,15 +167,15 @@ struct SideIconView: View {
                 SideIconView(state: .constant(.listening), isExpanded: .constant(false)) {}
                 Text("Listening").font(.caption)
             }
-            VStack {
-                SideIconView(state: .constant(.thinking), isExpanded: .constant(false)) {}
-                Text("Thinking").font(.caption)
-            }
-            VStack {
-                SideIconView(state: .constant(.acting), isExpanded: .constant(false)) {}
-                Text("Acting").font(.caption)
-            }
         }
     }
-    .frame(width: 500, height: 200)
+    .frame(width: 350, height: 250)
+}
+
+#Preview("Character") {
+    ZStack {
+        Color.gray.opacity(0.5).ignoresSafeArea()
+        SideCharacterView(isExpanded: .constant(false), isBlinking: .constant(false)) {}
+    }
+    .frame(width: 350, height: 250)
 }

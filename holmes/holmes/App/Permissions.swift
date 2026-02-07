@@ -2,6 +2,7 @@ import Foundation
 import AppKit
 import AVFoundation
 import CoreGraphics
+import ScreenCaptureKit
 
 struct PermissionManager {
     static func checkAccessibilityPermission() -> Bool {
@@ -14,15 +15,16 @@ struct PermissionManager {
     }
     
     static func checkScreenRecordingPermission() -> Bool {
-        let stream = CGDisplayStream(
-            display: CGMainDisplayID(),
-            outputWidth: 1,
-            outputHeight: 1,
-            pixelFormat: Int32(kCVPixelFormatType_32BGRA),
-            properties: nil,
-            handler: { _, _, _, _ in }
-        )
-        return stream != nil
+        var hasPermission = false
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        SCShareableContent.getExcludingDesktopWindows(false, onScreenWindowsOnly: false) { content, error in
+            hasPermission = (error == nil && content != nil)
+            semaphore.signal()
+        }
+        
+        _ = semaphore.wait(timeout: .now() + 1.0)
+        return hasPermission
     }
     
     static func openScreenRecordingSettings() {
